@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% Listas %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Author: Antonio Avilix
+%Year:2020
+
+%%%%%%%%Preambulo%%%%%%%%
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{enumerate} 
+\usepackage{amssymb}
+\usepackage[dvipsnames]{xcolor}
+
+\title{Listas}
+\author{yo}
+\date{descnocido}
+
+
+%%%%%%%%Documento%%%%%%%%
+\begin{document}
+\maketitle
+
+%Listas
+\section{Listas}
+Alimentos
+\begin{itemize}
+  \item Frutas
+  \item Verduras
+  \item Carne
+\end{itemize}
+
+%Listas enumeradas
+Frutas enumeradas
+\begin{enumerate}
+  \item Frutas
+  \begin{enumerate}
+    \item manzana
+    \begin{enumerate}
+      \item manzana verde
+      \item manzana roja
+      \item manzana amarilla
+    \end{enumerate}
+    \item guayaba
+    \item platano
+  \end{enumerate}
+  \item Verduras
+  \item Carne 
+\end{enumerate}
+
+%Listas personalizadas
+\begin{enumerate}[{Ejercicio}1.]
+  \item Escribir en latex
+  \item Ver videos de latex
+\end{enumerate}
+
+%Listas descriptivas
+\begin{description}
+  \item[Australia:] Sidney.
+  \item[EEUU:] NY
+  \item[España:] Barcelona.
+  \item[México:] Monterrey    
+\end{description}
+
+\newcounter{ncon} %contador
+Primera lista de deberes
+\begin{enumerate}[(A)]
+  \item Barrer casa.
+  \item Lavar platos
+  \setcounter{ncon}{\value{enumi}} %Asignamos valor de enumeración
+\end{enumerate}
+Segunda lista de deberes
+\begin{enumerate}[(A)]
+  \setcounter{enumi}{\value{ncon}} %Reinicio de enumeración
+  \item Bañar a la mascota.
+  \item Ir de compras.
+\end{enumerate}
+
+\renewcommand{\labelenumii}{\Roman{enumii}} 
+
+\begin{enumerate}
+  \item primer nivel
+  \item primer nivel
+  \begin{enumerate}
+    \item segundo nivel
+    \item segundo nivel
+    \begin{enumerate}
+      \item tercer nivel
+      \item tercer nivel
+      \begin{enumerate}
+        \item cuarto nivel
+        \item cuarto nivel
+      \end{enumerate}
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
+\renewcommand{\labelitemi}{\color{blue}$\blacksquare$}
+\renewcommand\labelitemii{\color{blue}$\square$}
+
+\begin{itemize}
+  \item  Primer nivel
+  \begin{itemize}
+    \item  Segundo Nivel
+    \begin{itemize}
+      \item  Tercer Nivel
+      \begin{itemize}
+        \item  Cuarto Nivel
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+\end{document}

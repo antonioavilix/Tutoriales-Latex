@@ -1,0 +1,49 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Creación de Comandos en LaTeX %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Author: Antonio Avilix
+%Year:2020
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{xargs} %Comando con opciones
+
+%Mis comandos
+\newcommand{\lla}{\longleftrightarrow}
+\newcommand{\ds}[1]{\displaystyle{#1}}
+\newcommand{\binomio}[3][2]{(#2+#3)^#1}
+\newcommandx\coordenadas[3][1=0,3=n]{#2_{#1},\ldots,#2_{#3}}
+\def\normatres(#1,#2,#3){\sqrt{#1^2+#2^2+#3^2}}
+%Mis entornos o ambientes creados
+\newenvironment{mientorno}[1][0.7]
+{
+    \begin{center}
+        \begin{minipage}    
+            {#1\textwidth}\bfseries
+}
+{
+        \end{minipage}
+    \end{center}
+}
+
+%Título, autor y fecha
+\title{Creación de Comandos}
+\author{Toño Avilix}
+\date{2020}
+
+\begin{document}
+\maketitle
+%Prueba de Mis comandos
+$a \lla b$ $\ds{\frac{x+1}{x-1}}$\\
+$\binomio{x}{y}$ $\binomio[3]{a}{b}$\\
+$\coordenadas{x}$\\
+$\coordenadas[0]{t}[m]$\\
+$\normatres(3,5,2)$
+%Pruebas de mis entornos
+\begin{mientorno}[0.4]
+    Este es un ejemplo de texto centrado en negritas.
+\end{mientorno}
+\end{document}

@@ -1,0 +1,269 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% Tablas %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Author: Antonio Avilix
+%Year:2020
+
+%%%%%%%%Preambulo%%%%%%%%
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{lipsum}
+\usepackage{longtable,multirow,booktabs,rotating,diagbox}
+\usepackage[dvipsnames,x11names,table]{xcolor}
+\usepackage{colortbl}
+\usepackage{multicol} %Patería para multicolumnas
+\usepackage{graphicx}
+
+\definecolor{micolor}{HTML}{2BD937}
+
+%Título, autor y fecha
+\title{Tablas}
+\author{Toño Avilix }
+\date{2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Tablas}
+
+%-------------Tabla-------------
+\begin{tabular}{|l|c|}
+    \hline
+    Fruta & Cantidad \\
+    \hline 
+    Pera & 3 \\
+    Manzana & 1\\
+    Naranja & 1 \\
+    \hline
+\end{tabular}
+\\ \\ \\
+%-------------Tabla con margenes-------------
+\begin{tabular}{cc}
+    \toprule
+    Nombre & Apellido \\
+    \midrule
+    Antonio & Garcia \\
+    Carlos & Sanchez \\
+    Ana & Perez \\
+    \bottomrule
+\end{tabular}
+\\  \\ \\
+%-------------Tabla con ancho de columnas personalizado-------------
+\begin{tabular}{|p{2cm}|p{1.7cm}|}
+    \hline
+    Nombre & Apellido \\
+    \hline
+    Antonio & Garcia \\
+    Carlos & Sanchez \\
+    Ana & Perez \\
+    \hline
+\end{tabular}
+\\ \\ \\
+%-------------Tabla multipaginas-------------
+Tablas largas
+\begin{longtable}[c]{l r}
+    \toprule
+    Nombre & Apellido  \\
+     \midrule
+    Antonio & Garcia\\ 
+    Carlos & Sanchez \\ 
+    Julio   &  Ramírez\\
+    Marco & López\\
+    Pedro &  Ramírez\\
+    María & Hernández \\
+    Daniel& Torres\\
+    Eduardo & Torres\\
+    Venessa & Núñez\\
+    Teresa& Núñez \\
+    Sandra & Hernández \\
+    Alejandra & López \\
+    Andrea &  López\\
+    Jorge & Perez \\
+    Leonardo & García \\
+    Laura & Gonzales \\
+    Ana & Perez \\ \bottomrule
+\end{longtable}
+%-------------Tabla colores de columnas-------------
+\begin{tabular}{|>{\columncolor[RGB]{217,46,111}} c |
+    >{\columncolor{micolor}} c|}
+    \hline
+    Columna 1 & Columna 2 \\
+    \hline
+    Columna 1  & Columna 2\\
+    \hline
+\end{tabular}
+\\ \\
+%-------------Tabla colores de filas-------------
+\begin{tabular}{|l|l|}
+    \hline
+    \rowcolor[HTML]{D92B37}
+    Celda 1 & Celda 2 \\
+    \rowcolor[HTML]{84BDDB}
+    Celda 3 & Celda 4 \\
+    \rowcolor[HTML]{D9D541}
+    Celda 5 & Celda 6 \\
+\end{tabular}
+\\ \\ \\
+%-------------Tabla colores de celdas-------------
+\begin{tabular}{cc}
+    \cellcolor[rgb]{0,0.9,0.7}Celda 1 
+    & \cellcolor[HTML]{0CABF2} Celda 2 \\
+    \cellcolor[HTML]{0DF1FC} Celda 3 
+    & \cellcolor[HTML]{0DFC81} Celda 4 \\
+\end{tabular}
+\\ \\ \\
+%-------------Tabla muchas columnas------------
+\begin{tabular}{l*{6}{c}r}
+    Equipo              & P & W & D & L & F  & A & Pts \\
+\hline
+Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+\end{tabular}
+\\ \\ \\ 
+%-------------Tabla con ancho de columnas personalizado------------
+\begin{tabular}{>{\centering}p{3.5cm}>{\centering}p{3.5cm} }
+    Geometria & Algebra
+    \tabularnewline
+    \hline
+     Puntos & Addition 
+    \tabularnewline
+     Esferas & Multiplicación
+\end{tabular}
+\\ \\ \\
+%-------------Tabla con alineación personalizado------------
+\begin{tabular}{r|r@{.}l}
+            &3      & 14159 \\
+            &16     & 2     \\
+            &123    & 456   \\ \hline 
+    Total   &142    &79759  \\
+\end{tabular}
+\\ \\ \\
+
+%-------------Tabla multicolumnas-----------
+Multiples Columnas\\
+\begin{tabular}{|l|l|}
+    \hline
+    \multicolumn{2}{|c|}{Alineación}\\
+    \hline
+    POR &  Keylor Navas\\ \hline
+    DEF &  Thiago Silva\\
+    DEF &  Thilo Kehrer \\
+    LTI & Thilo Kehrer\\
+    LTD &  Juan Bernat	\\ \hline
+    MC &  Marquinhos\\ 
+    MD &  Leandro Paredes\\
+    MI &  Ander Herrera\\ \hline
+    EXT &  Ángel Di María\\
+    DC &  Kylian Mbappé\\
+    EXT &  Neymar\\ \hline
+\end{tabular}
+\\ \\ \\
+
+%-------------Tabla multifilas-----------
+Multiples filas\\
+\begin{tabular}{|l|l|l|}
+    \hline
+    \multicolumn{3}{|c|}{Alineación}\\
+    \hline
+    Portero                         &POR &  Keylor Navas\\ \hline
+    \multirow{4}{*}{Defensas}       &DEF &  Thiago Silva\\
+                                    &DEF &  Thilo Kehrer \\
+                                    &LTI & Thilo Kehrer\\
+                                    &LTD &  Juan Bernat	\\ \hline
+    \multirow{3}{*}{Mediocampistas} &MC &  Marquinhos\\ 
+                                    &MD &  Leandro Paredes\\
+                                    &MI &  Ander Herrera\\ \hline
+    \multirow{3}{*}{Delanteros}     &EXT &  Ángel Di María\\
+                                    &DC &  Kylian Mbappé\\
+                                    &EXT &  Neymar\\ \hline
+\end{tabular}
+
+%-------------Entorno para Tablas-----------
+\\ Entornos para tablas  \\
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Celda 1 & Celda 2 \\
+        Celda 3 & Celda 4 \\
+        \hline
+    \end{tabular}
+    \caption{Esto es una tabla}
+    \label{tab:mitabla}
+\end{table}
+%-------------Tablas con lineas de color-----------
+\begin{tabular}{l!{\color{violet}\vrule}l}
+    \arrayrulecolor{red}\hline
+    celda 1 & celda 2 \\ 
+    \arrayrulecolor{blue} \hline
+\end{tabular}
+%-------------Tablas con Rotación-----------
+\\ Rotación de Tablas. \\
+\begin{sideways}
+    \begin{tabular}{|c|c|}
+        \hline
+        Celda 1 & Celda 2 \\
+        Celda 3 & Celda 4 \\ \hline 
+    \end{tabular}
+\end{sideways}
+\\ \\ 
+\begin{tabular}{|c|c|}
+    \hline
+        texto 1 & \begin{sideways} texto 2 \end{sideways}\\ \hline
+        texto 3 &  texto 4 \\ \hline
+\end{tabular}
+\\ \\ \\
+%Cambiado sepacion de columnas
+{\setlength{\tabcolsep}{10mm}
+%Cambiando tamaño de lineas
+{\setlength{\arrayrulewidth}{2mm}
+\begin{tabular}{| l | l |}
+    \hline
+        celda 1 & celda 2\\
+    \hline
+        celda 3 & celda 4\\
+    \hline
+\end{tabular}
+}}
+\\ \\
+\begin{table}[h]
+    \begin{tabular}{|l|*{3}{c|}}
+      \hline
+      \diagbox[width=\dimexpr \textwidth/8+2\tabcolsep, height=1cm]{ Edad }{Sexo}
+                   & Femenino & Masculino & Total \\
+      \hline
+      15 años & & 3 & 3\\
+      \hline
+      16 años & 12 & 5& 17\\
+      \hline17 años & 4 & 6 & 10\\
+      \hline
+      Total &16 & 14  & 30\\
+      \hline
+    \end{tabular}
+\end{table}
+\begin{table}[h!]
+    \scalebox{0.8}{\begin{tabular}{*{12}{c}}
+        Valor 1 &  Valor 2 & Valor 3 & Valor 4 & Valor 5 & Valor 6 & 
+        Valor7 & Valor 8 &  Valor 9& Valor 10 & Valor 11 & valor 12 \\
+        2352.1 & 3248.2 & 7228.7 & 7339.4 & 783.7 & 43.23& 79.4& 
+        10.2 & 123.3 & 793.2 & 78.4 & 4.7 \\
+    \end{tabular}}
+\end{table}
+\begin{table}[h!]
+    \centering
+    \rowcolors{1}{}{gray!20}
+    \begin{tabular}{ll}
+    \rowcolor{LightBlue1} Articulo & Precio\\ \hline
+    Pantalon & 200 \\
+    Camiseta & 300\\
+    Zapatos &400\\
+    Collar & 1500\\ \hline
+    \end{tabular}
+\end{table}
+\end{document}

@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Expresiones Matematicas en LaTeX %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Author: Antonio Avilix
+%Year:2020
+
+%Preambulo
+\documentclass[11pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsfonts} %Paqueterias para matematicas
+\spanishdecimal{.}    %Uso de punto Decima
+\usepackage{esvect}   %Paquete para vectores
+
+%Título, Autor y Fecha
+\title{Expresiones Matematicas}
+\author{Yo}
+\date{2020}
+
+\begin{document}
+\maketitle
+
+%---------Potencias, subíndices y superíndices----------------
+\section{Potencias, subíndices y superíndices}
+$x^p$ $a^{2x}$ $d_2$ $a_{k+a}$ $\sum_{k=1}^N 1+a_{k}$ \\
+$\displaystyle \sum_{k=1}^N 1+a_{k}$\\
+$9.1$
+%-----------------Fraciones----------------------
+\section{Fracciones}
+$\frac{x+1}{x-1}$ \\ \\
+$\displaystyle \frac{x+1}{x-1} $ \\ \\ \\ 
+${{x+1} \over 2} \over x-1 $ \\ \\
+$\displaystyle {\left(1+ \frac{1}{x} \right)^n}$ \\ \\
+$x+1 \atop x-1$ \\ \\
+$x+1 \above 2pt x-1$ \\ \\
+$x+1 \brack x-1 $ \\
+$\displaystyle{a \stackrel{f}{\rightarrow}b}$ \\ \\
+$\displaystyle {a \choose b}$ \\
+$\displaystyle\binom{n}{k}=\displaystyle\frac{n!}{k!(n-k)!}$
+%-----------------Símbolos----------------------
+\section{simbolos}
+$\alpha + \gamma = \Lambda$ \\
+$\sqrt{x+1}$ $\sqrt[3]{3x^4}$ \\
+$\Bar{p}$ $\vec{p}$ $\vv{v\times w}$
+%-----------------Entornos de Ecuaciones----------------------
+\section{Formato de ecuaciones}
+Ecuacion \ref{ec:logaritmos} es un ejemplo de propiedad de los logaritmos
+\begin{equation}\label{ec:logaritmos}
+    log(xy)=logx+logy
+\end{equation}
+Ejemplo de integral.
+\begin{equation}
+    \iint\limits_Q\boldsymbol{F} \cdot \,dA 
+\end{equation}
+Ecuacion que no esta enumerada
+\begin{equation*}
+    a=b\quad a=c
+\end{equation*}
+%-----------------Delimitadores y Llaves----------------------
+\section{Delimitadores y llaves}
+\begin{equation*}
+    \int_{a}^{b}2x\,dx=\left. x^2 \right|_{a}^b
+\end{equation*}
+\begin{equation*}
+    \left [ \frac{2x}{3y} \right]
+\end{equation*}
+%-----------------Arreglos y Matrices----------------------
+\section{Arreglos y Matrices}
+\begin{equation*}
+    \left[ 
+    \begin{array}{cc}
+        4&7\\
+        3&6
+    \end{array}
+    \right]
+\end{equation*}
+\begin{equation*}
+    \begin{pmatrix}
+        9&8\\
+        3&7
+    \end{pmatrix}
+\end{equation*}
+\begin{equation*}
+    \begin{pmatrix}
+        1 & \ldots & 0 \\
+        \vdots & \ddots & \vdots \\
+        0 & \ldots & 1
+    \end{pmatrix}
+\end{equation*}
+Función a trozos
+\begin{equation*}
+    f(x)=
+    \left \{
+    \begin{array}{lcc}
+        x^2 &   si  & x < 2 \\
+        x-2 &  si  & x \geq 2
+    \end{array}
+    \right.
+\end{equation*}
+M=\bordermatrix{~ & x & y \cr f_1 & 1 & 0 \cr f_2 & 0 &1 \cr}
+%---------------Personalización de Expresiones--------------------
+\section{Edición de expresiones}
+Alineamiento de expresiones
+\begin{eqnarray*}
+    4(x+y)-2xy &=& 4(x^2+2xy+y^2)-2xy \\
+             &=&  4x^2+8xy+4y^2-2xy \\
+             &=&  4x^2+4y^2+6xy \\
+\end{eqnarray*}
+ecuaciones en cajas
+\begin{equation*}
+    \boxed{x^2+y^2=z^2}
+\end{equation*}
+Descripciones en ecuaciones.
+\[
+    z=\overbrace{
+        \underbrace{x}_\text{real}+
+        \underbrace{yi}_\text{imaginario}
+    }^\text{Número complejo}
+\]
+\section{tips}
+$$\vec{\nabla} \cdot \vec {B} = 0$$
+\end{document}

@@ -1,0 +1,32 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% Colores en LaTeX %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Author: Antonio Avilix
+%Year:2020
+
+%%%%%%%%Preambulo%%%%%%%%
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsfonts} 
+\usepackage[dvipsnames]{xcolor} %Paquetería para colores
+
+\definecolor{micolor}{HTML}{F7AE81} %Definición de color por usuario
+
+%Título, autor y fecha
+\title{Colores}
+\author{Toño Avilix}
+\date{2020}
+
+\pagecolor[named]{micolor}
+
+%%%%%%%%Documento%%%%%%%%
+\begin{document}
+\maketitle
+{\color{Aquamarine}\rule{\linewidth}{1.5mm}} %LINEA DE COLOR
+Estoy aprendiendo a usar \textcolor{Red}{colores}. %Texto de color
+\colorbox{Green}{Caja verde}.\\ %Caja de color
+\textcolor{micolor}{Texto con color creado} %color creado por mi
+
+\end{document}
